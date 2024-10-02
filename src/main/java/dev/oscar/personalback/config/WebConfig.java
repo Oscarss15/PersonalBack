@@ -1,18 +1,17 @@
-/* package dev.oscar.personalback.config;
+ package dev.oscar.personalback.config;
 
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-public class WebConfig implements WebMvcConfigurer {
-     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/v1/**") // Ajusta la ruta según tus necesidades
-                .allowedOrigins("*") // Permite todas las fuentes (ajusta según sea necesario)
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // Métodos permitidos
-                .allowCredentials(true); // Permitir credenciales (cookies, etc.)
-    }
-    @Override
+ import org.springframework.context.annotation.Configuration;
+ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+ 
+ @Configuration
+ @EnableWebMvc // Esta línea es opcional, a menudo se usa en aplicaciones no Spring Boot
+ public class WebConfig implements WebMvcConfigurer {
+     @Override
      public void addResourceHandlers(ResourceHandlerRegistry registry) {
-   }
-}
- */
+         registry.addResourceHandler("/upload/**")
+                 .addResourceLocations("classpath:/static/upload/");
+     }
+ }
+ 

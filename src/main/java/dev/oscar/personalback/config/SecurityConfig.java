@@ -28,7 +28,8 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.POST, "/api/v1/articulos/**").permitAll() // Permitir POST para crear artículos
                     .requestMatchers("/upload/**").permitAll() //
                      
-                    .anyRequest().authenticated() // Todas las demás solicitudes deben estar autenticadas
+                  /*   .anyRequest().authenticated()  */
+                    .anyRequest().permitAll()
             )
             .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin())); // Permitir acceso a H2 Console desde el mismo origen
 
