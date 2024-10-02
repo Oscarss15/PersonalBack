@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 import java.time.LocalDate;
@@ -29,13 +30,13 @@ public class Articulos {
 
     @Column(name = "fecha")
     private LocalDate fecha;
-
+    @Lob
     @Column(name = "texto1")
     private String texto1;
-
+     @Lob
     @Column(name = "texto2")
     private String texto2;
-
+    @Lob
     @Column(name = "texto3")
     private String texto3;
 

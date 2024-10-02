@@ -14,6 +14,7 @@ public class ArticulosService {
      @Autowired
     private ArticulosRepository repository;
 
+    
     public List<Articulos> getAllArticulos() {
         return repository.findAll();
     }
