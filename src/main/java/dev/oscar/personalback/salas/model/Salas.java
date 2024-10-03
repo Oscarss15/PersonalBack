@@ -31,7 +31,9 @@ public class Salas {
     @Column(name = "hora")
     private LocalTime hora;
 
+
     public Salas(){}
+
 
     public Salas(Long id, String ciudad, String lugar, LocalDate fecha, LocalTime hora) {
         this.id = id;
@@ -39,7 +41,10 @@ public class Salas {
         this.lugar = lugar;
         this.fecha = fecha;
         this.hora = hora;
+       
     }
+
+
 
     public Long getId() {
         return id;
@@ -80,6 +85,9 @@ public class Salas {
     public void setHora(LocalTime hora) {
         this.hora = hora;
     }
+
+
+
 
     
 }
