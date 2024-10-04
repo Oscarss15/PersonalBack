@@ -46,11 +46,11 @@ public class ArticulosService {
 
     
     public List<Articulos> getArticulosDeTecnica() {
-        return repository.findByTipo("tecnica");
+        return repository.findByTipo("técnica");
     }
 
     public List<Articulos> getArticulosDePsicologia() {
-        return repository.findByTipo("psicologia");
+        return repository.findByTipo("psicología");
     }
 
 }

@@ -48,7 +48,7 @@ public class Articulos {
 
     @Column(name = "imagen3")
     private String imagen3;
-
+    
     public Articulos(){}
 
     public Articulos(Long id, String titulo, String autor, String tipo, LocalDate fecha, String texto1, String texto2,
