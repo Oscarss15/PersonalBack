@@ -147,6 +147,9 @@ A veces cuando ves contra quién juegas puedes pensar «estos nos van a dar una 
 
 
 INSERT INTO salas (ciudad, lugar, fecha, hora) VALUES
-('Gijon', 'Pabellon La Guia', '2024-10-01', '20:00'),
-('Oviedo', 'Pabellon La Guia', '2024-12-17', '17:00'),
-('Aviles', 'Pabellon La Guia', '2024-10-15', '17:00');
+('Gijon', 'Pabellon La Guia', '2024-10-22', '20:00'),
+('Oviedo', 'Centro deportivo de San Lázaro', '2024-12-17', '17:00'),
+('Aviles', 'Palacio de Deportes', '2024-10-15', '17:00'),
+('Gijon', 'Com Dep El Llano', '2024-10-21', '20:00'),
+('Oviedo', 'Polideportivo de San Claudio', '2024-12-17', '17:00'),
+('Aviles', 'Jardín de Cantos', '2024-10-15', '17:00');
