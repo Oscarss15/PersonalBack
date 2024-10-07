@@ -20,14 +20,14 @@ public class SalasController {
         this.salasService = salasService;
     }
 
-    // Obtener todas las salas
+    
     @GetMapping(path = "/allsalas")
     public ResponseEntity<List<Salas>> getAllSalas() {
         List<Salas> salas = salasService.getAllSalas();
         return ResponseEntity.ok(salas);
     }
 
-    // Obtener sala por ID
+    
     @GetMapping(path = "/{id}")
     public ResponseEntity<Salas> getSalasById(@PathVariable Long id) {
         Salas salas = salasService.getSalasById(id);
@@ -38,14 +38,14 @@ public class SalasController {
         }
     }
 
-    // Crear una nueva sala
+    
     @PostMapping(path = "/create")
     public ResponseEntity<Salas> createSala(@RequestBody Salas sala) {
         Salas nuevaSala = salasService.createSala(sala);
         return ResponseEntity.ok(nuevaSala);
     }
 
-    // Eliminar una sala por ID
+   
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Void> deleteSalaById(@PathVariable Long id) {
         salasService.deleteSalaById(id);

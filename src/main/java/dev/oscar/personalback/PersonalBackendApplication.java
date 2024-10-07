@@ -8,11 +8,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages = {
     "dev.oscar.personalback.articulos.model", 
-    "dev.oscar.personalback.salas.model" // Agregas el paquete de salas aquí
+    "dev.oscar.personalback.salas.model" 
 })
 @EnableJpaRepositories(basePackages = {
     "dev.oscar.personalback.articulos.repository", 
-    "dev.oscar.personalback.salas.repository" // Agregas el paquete de salas aquí
+    "dev.oscar.personalback.salas.repository" 
 })
 public class PersonalBackendApplication {
     public static void main(String[] args) {

@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
+
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
@@ -19,19 +19,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .cors(Customizer.withDefaults()) // Habilitar CORS
-            .csrf(csrf -> csrf.disable()) // Desactivar CSRF (considerar habilitar en producción)
+            .cors(Customizer.withDefaults()) 
+            .csrf(csrf -> csrf.disable()) 
             .authorizeHttpRequests(authorizeRequests -> 
                 authorizeRequests
-                    .requestMatchers("/h2-console/**").permitAll() // Permitir acceso a H2 Console
-                    .requestMatchers(HttpMethod.GET, "/api/v1/articulos/**").permitAll() // Permitir GET para artículos
-                    .requestMatchers(HttpMethod.POST, "/api/v1/articulos/**").permitAll() // Permitir POST para crear artículos
+                    .requestMatchers("/h2-console/**").permitAll() 
+                    .requestMatchers(HttpMethod.GET, "/api/v1/articulos/**").permitAll() 
+                    .requestMatchers(HttpMethod.POST, "/api/v1/articulos/**").permitAll() 
                     .requestMatchers("/upload/**").permitAll() //
                      
-                  /*   .anyRequest().authenticated()  */
+                 
                     .anyRequest().permitAll()
             )
-            .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin())); // Permitir acceso a H2 Console desde el mismo origen
+            .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin())); 
 
         return http.build();
     }
@@ -39,13 +39,13 @@ public class SecurityConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowCredentials(true); // Permitir credenciales (cookies, headers de autorización, etc.)
-        corsConfiguration.addAllowedOrigin("http://localhost:5173"); // Permitir solo este origen (ajusta según tu configuración)
-        corsConfiguration.addAllowedHeader("*"); // Permitir todos los headers
-        corsConfiguration.addAllowedMethod("*"); // Permitir todos los métodos (GET, POST, PUT, DELETE, etc.)
+        corsConfiguration.setAllowCredentials(true); 
+        corsConfiguration.addAllowedOrigin("http://localhost:5173"); 
+        corsConfiguration.addAllowedHeader("*"); 
+        corsConfiguration.addAllowedMethod("*"); 
         
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfiguration); // Aplica a todas las rutas
+        source.registerCorsConfiguration("/**", corsConfiguration); 
         return new CorsFilter(source);
     }
 }
